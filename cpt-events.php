@@ -57,7 +57,7 @@ $args = array(
     '_builtin' => false,
     '_edit_link' => 'post.php?post=%d', // ?
     'capability_type' => 'post',
-    'menu_icon' => get_bloginfo('template_url').'/images/event_16.png',
+    //'menu_icon' => get_bloginfo('template_url').'/images/event_16.png',
     'hierarchical' => false,
     'rewrite' => array( "slug" => "events" ),
     'supports'=> array('title', 'thumbnail', 'excerpt', 'editor') ,
