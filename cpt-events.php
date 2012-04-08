@@ -1,4 +1,11 @@
 <?php
+/* textdomain */
+function eventman_init() {
+  load_plugin_textdomain( 'eventman', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+add_action('init', 'eventman_init');
+
+
 /* ------------------- THEME FORCE ---------------------- */
 
 /*
