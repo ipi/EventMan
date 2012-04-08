@@ -311,5 +311,4 @@ add_action( 'admin_print_styles-post-new.php', 'events_styles', 1000 );
 
 add_action( 'admin_print_scripts-post.php', 'events_scripts', 1000 );
 add_action( 'admin_print_scripts-post-new.php', 'events_scripts', 1000 );
-}
 ?>
