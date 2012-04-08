@@ -140,7 +140,7 @@ function tf_events_custom_columns($column) {
                     array_push($eventcats_html, $eventcat->name);
                     echo implode($eventcats_html, ", ");
                 } else {
-                _e('None', 'themeforce');;
+                _e('None');;
                 }
             break;
             case "tf_col_ev_date":
