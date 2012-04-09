@@ -1,4 +1,3 @@
-#@ eventman
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -19,4 +18,202 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
+
+#: cpt-events-ical.php:16
+#: cpt-events-ical.php:18
+#@ default
+msgid " - Events"
+msgstr ""
+
+#: cpt-events.php:49
+#@ default
+msgctxt "post type general name"
+msgid "Events"
+msgstr ""
+
+#: cpt-events.php:50
+#@ default
+msgctxt "post type singular name"
+msgid "Event"
+msgstr ""
+
+#: cpt-events.php:51
+#@ default
+msgctxt "events"
+msgid "Add New"
+msgstr ""
+
+#: cpt-events.php:52
+#@ default
+msgid "Add New Event"
+msgstr ""
+
+#: cpt-events.php:53
+#@ default
+msgid "Edit Event"
+msgstr ""
+
+#: cpt-events.php:54
+#@ default
+msgid "New Event"
+msgstr ""
+
+#: cpt-events.php:55
+#@ default
+msgid "View Event"
+msgstr ""
+
+#: cpt-events.php:56
+#@ default
+msgid "Search Events"
+msgstr ""
+
+#: cpt-events.php:57
+#@ default
+msgid "No events found"
+msgstr ""
+
+#: cpt-events.php:58
+#@ default
+msgid "No events found in Trash"
+msgstr ""
+
+#: cpt-events.php:63
+#@ default
+msgid "Events"
+msgstr ""
+
+#: cpt-events.php:88
+#@ default
+msgctxt "taxonomy general name"
+msgid "Categories"
+msgstr ""
+
+#: cpt-events.php:89
+#@ default
+msgctxt "taxonomy singular name"
+msgid "Category"
+msgstr ""
+
+#: cpt-events.php:90
+#@ default
+msgid "Search Categories"
+msgstr ""
+
+#: cpt-events.php:91
+#@ default
+msgid "Popular Categories"
+msgstr ""
+
+#: cpt-events.php:92
+#@ default
+msgid "All Categories"
+msgstr ""
+
+#: cpt-events.php:95
+#@ default
+msgid "Edit Category"
+msgstr ""
+
+#: cpt-events.php:96
+#@ default
+msgid "Update Category"
+msgstr ""
+
+#: cpt-events.php:97
+#@ default
+msgid "Add New Category"
+msgstr ""
+
+#: cpt-events.php:98
+#@ default
+msgid "New Category Name"
+msgstr ""
+
+#: cpt-events.php:99
+#@ default
+msgid "Separate categories with commas"
+msgstr ""
+
+#: cpt-events.php:100
+#@ default
+msgid "Add or remove categories"
+msgstr ""
+
+#: cpt-events.php:101
+#@ default
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: cpt-events.php:105
+#@ default
+msgid "Event Category"
+msgstr ""
+
+#: cpt-events.php:154
+#@ default
+msgid "None"
+msgstr ""
+
+#: cpt-events.php:291
+#, php-format
+#@ default
+msgid "Event updated. <a href=\"%s\">View item</a>"
+msgstr ""
+
+#: cpt-events.php:292
+#@ default
+msgid "Custom field updated."
+msgstr ""
+
+#: cpt-events.php:293
+#@ default
+msgid "Custom field deleted."
+msgstr ""
+
+#: cpt-events.php:294
+#@ default
+msgid "Event updated."
+msgstr ""
+
+#. translators: %s: date and time of the revision 
+#: cpt-events.php:296
+#, php-format
+#@ default
+msgid "Event restored to revision from %s"
+msgstr ""
+
+#: cpt-events.php:297
+#, php-format
+#@ default
+msgid "Event published. <a href=\"%s\">View event</a>"
+msgstr ""
+
+#: cpt-events.php:298
+#@ default
+msgid "Event saved."
+msgstr ""
+
+#: cpt-events.php:299
+#, php-format
+#@ default
+msgid "Event submitted. <a target=\"_blank\" href=\"%s\">Preview event</a>"
+msgstr ""
+
+#: cpt-events.php:300
+#, php-format
+#@ default
+msgid "Event scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview event</a>"
+msgstr ""
+
+#: cpt-events.php:302
+#@ default
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: cpt-events.php:303
+#, php-format
+#@ default
+msgid "Event draft updated. <a target=\"_blank\" href=\"%s\">Preview event</a>"
+msgstr ""
 
