@@ -36,7 +36,7 @@ add_action('init', 'eventman_init');
 add_action('admin_init', 'tf_functions_css');
 
 function tf_functions_css() {
-	//wp_enqueue_style('tf-functions-css', plugin_dir_url() . 'css/tf-functions.css');
+	wp_enqueue_style('tf-functions-css', plugins_url('css/tf-functions.css', __FILE__) );
 }
 
 // 1. Custom Post Type Registration (Events)
