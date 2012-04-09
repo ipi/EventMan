@@ -312,7 +312,7 @@ function events_styles() {
     global $post_type;
     if( 'tf_events' != $post_type )
         return;
-    wp_enqueue_style('ui-datepicker', get_bloginfo('template_url') . '/css/jquery-ui-1.8.9.custom.css');
+    wp_enqueue_style('ui-datepicker', plugins_url('/css/jquery-ui-1.8.9.custom.css', __FILE__) );
 }
 
 function events_scripts() {
