@@ -1,4 +1,15 @@
 <?php
+/*
+Plugin Name: Event Manager
+Plugin URI: http://www.ramoonus.nl/wordpress/eventman/
+Description: Event Manager
+Version: 1.0
+Author: Ramoonus
+Author URI: http://www.ramoonus.nl/
+License: GPL2
+*/
+
+
 /* textdomain */
 function eventman_init() {
   load_plugin_textdomain( 'eventman', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
