@@ -36,7 +36,7 @@ add_action('init', 'eventman_init');
 add_action('admin_init', 'tf_functions_css');
 
 function tf_functions_css() {
-	wp_enqueue_style('tf-functions-css', plugin_dir_url() . 'css/tf-functions.css');
+	//wp_enqueue_style('tf-functions-css', plugin_dir_url() . 'css/tf-functions.css');
 }
 
 // 1. Custom Post Type Registration (Events)
@@ -319,9 +319,10 @@ function events_scripts() {
     global $post_type;
     if( 'tf_events' != $post_type )
     return;
-    wp_enqueue_script('jquery-ui', get_bloginfo('template_url') . '/js/jquery-ui-1.8.9.custom.min.js', array('jquery'));
-    wp_enqueue_script('ui-datepicker', get_bloginfo('template_url') . '/js/jquery.ui.datepicker.min.js');
-    wp_enqueue_script('custom_script', get_bloginfo('template_url').'/js/pubforce-admin.js', array('jquery'));
+	
+	wp_enqueue_script('jquery-ui',plugins_url('/js/jquery-ui-1.8.9.custom.min.js', __FILE__),array('jquery'), '1.8.9');
+	wp_enqueue_script('jquery-ui-datepicker',plugins_url('/js/jquery.ui.datepicker.min.js', __FILE__),array('jquery-ui'), '1.8.9');
+	wp_enqueue_script('pubforce-admin',plugins_url('/js/pubforce-admin.js', __FILE__),array('jquery'), '1.0');
 }
 
 add_action( 'admin_print_styles-post.php', 'events_styles', 1000 );
@@ -329,4 +330,8 @@ add_action( 'admin_print_styles-post-new.php', 'events_styles', 1000 );
 
 add_action( 'admin_print_scripts-post.php', 'events_scripts', 1000 );
 add_action( 'admin_print_scripts-post-new.php', 'events_scripts', 1000 );
+
+/* Includes */
+include('cpt-events-shortcode.php');
+//include('cpt-events-ical.php');
 ?>
