@@ -1,7 +1,5 @@
 <?php
-
 // - standalone json feed -
-
 header('Content-Type:application/json');
 
 // - grab wp load, wherever it's hiding -
@@ -72,5 +70,4 @@ endif;
 
 // - fire away -
 echo json_encode($jsonevents);
-
 ?>
