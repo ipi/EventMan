@@ -71,7 +71,7 @@ $args = array(
     //'menu_icon' => get_bloginfo('template_url').'/images/event_16.png',
     'hierarchical' => false,
     'rewrite' => array( "slug" => "events" ),
-    'supports'=> array('title', 'thumbnail', 'excerpt', 'editor') ,
+    'supports'=> array('title', 'thumbnail', 'editor') ,
     'show_in_nav_menus' => true,
     'taxonomies' => array( 'tf_eventcategory', 'post_tag')
 );
