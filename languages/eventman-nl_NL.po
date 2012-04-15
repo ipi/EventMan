@@ -23,50 +23,50 @@ msgstr ""
 #: cpt-events-ical.php:18
 #@ default
 msgid " - Events"
-msgstr ""
+msgstr "- Evenementen"
 
 #: cpt-events.php:49
 #@ default
 msgctxt "post type general name"
 msgid "Events"
-msgstr ""
+msgstr "Evenementen"
 
 #: cpt-events.php:50
 #@ default
 msgctxt "post type singular name"
 msgid "Event"
-msgstr ""
+msgstr "Evenementen"
 
 #: cpt-events.php:51
 #@ default
 msgctxt "events"
 msgid "Add New"
-msgstr ""
+msgstr "Nieuwe Toevoegen"
 
 #: cpt-events.php:52
 #@ default
 msgid "Add New Event"
-msgstr ""
+msgstr "Nieuw Evenement Toevoegen"
 
 #: cpt-events.php:53
 #@ default
 msgid "Edit Event"
-msgstr ""
+msgstr "Evenement Bewerken"
 
 #: cpt-events.php:54
 #@ default
 msgid "New Event"
-msgstr ""
+msgstr "Nieuw Evenement"
 
 #: cpt-events.php:55
 #@ default
 msgid "View Event"
-msgstr ""
+msgstr "Evenementen Bekijken"
 
 #: cpt-events.php:56
 #@ default
 msgid "Search Events"
-msgstr ""
+msgstr "Evenement Zoeken"
 
 #: cpt-events.php:57
 #@ default
@@ -81,19 +81,19 @@ msgstr ""
 #: cpt-events.php:63
 #@ default
 msgid "Events"
-msgstr ""
+msgstr "Evenementen"
 
 #: cpt-events.php:88
 #@ default
 msgctxt "taxonomy general name"
 msgid "Categories"
-msgstr ""
+msgstr "Categorieen"
 
 #: cpt-events.php:89
 #@ default
 msgctxt "taxonomy singular name"
 msgid "Category"
-msgstr ""
+msgstr "Categorie"
 
 #: cpt-events.php:90
 #@ default
@@ -153,7 +153,7 @@ msgstr ""
 #: cpt-events.php:154
 #@ default
 msgid "None"
-msgstr ""
+msgstr "Geen"
 
 #: cpt-events.php:291
 #, php-format
@@ -176,7 +176,7 @@ msgstr ""
 msgid "Event updated."
 msgstr ""
 
-#. translators: %s: date and time of the revision 
+#. translators: %s: date and time of the revision
 #: cpt-events.php:296
 #, php-format
 #@ default
@@ -209,7 +209,7 @@ msgstr ""
 #: cpt-events.php:302
 #@ default
 msgid "M j, Y @ G:i"
-msgstr ""
+msgstr "M j, Y @ G:i"
 
 #: cpt-events.php:303
 #, php-format
