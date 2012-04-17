@@ -2,7 +2,7 @@
 /*
 Plugin Name: Event Manager
 Plugin URI: http://www.ramoonus.nl/wordpress/eventman/
-Description: Event Manager
+Description: Event Manager for WordPress, using a Custom Post Type.
 Version: 1.0
 Author: Ramoonus
 Author URI: http://www.ramoonus.nl/
