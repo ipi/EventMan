@@ -44,40 +44,38 @@ function tf_functions_css() {
 add_action( 'init', 'create_event_postype' );
 
 function create_event_postype() {
-
-$labels = array(
-    'name' => _x('Events', 'post type general name'),
-    'singular_name' => _x('Event', 'post type singular name'),
-    'add_new' => _x('Add New', 'events'),
-    'add_new_item' => __('Add New Event'),
-    'edit_item' => __('Edit Event'),
-    'new_item' => __('New Event'),
-    'view_item' => __('View Event'),
-    'search_items' => __('Search Events'),
-    'not_found' =>  __('No events found'),
-    'not_found_in_trash' => __('No events found in Trash'),
-    'parent_item_colon' => '',
-);
-
-$args = array(
-    'label' => __('Events'),
-    'labels' => $labels,
-    'public' => true,
-    'can_export' => true,
-    'show_ui' => true,
-    '_builtin' => false,
-    '_edit_link' => 'post.php?post=%d', // ?
-    'capability_type' => 'post',
-    //'menu_icon' => get_bloginfo('template_url').'/images/event_16.png',
-    'hierarchical' => false,
-    'rewrite' => array( "slug" => "events" ),
-    'supports'=> array('title', 'thumbnail', 'editor') ,
-    'show_in_nav_menus' => true,
-    'taxonomies' => array( 'tf_eventcategory', 'post_tag')
-);
-
-register_post_type( 'tf_events', $args);
-
+	$labels = array(
+		'name' => _x('Events', 'post type general name'),
+		'singular_name' => _x('Event', 'post type singular name'),
+		'add_new' => _x('Add New', 'events'),
+		'add_new_item' => __('Add New Event'),
+		'edit_item' => __('Edit Event'),
+		'new_item' => __('New Event'),
+		'view_item' => __('View Event'),
+		'search_items' => __('Search Events'),
+		'not_found' =>  __('No events found'),
+		'not_found_in_trash' => __('No events found in Trash'),
+		'parent_item_colon' => '',
+	);
+	
+	$args = array(
+		'label' => __('Events'),
+		'labels' => $labels, // the array above this one
+		'public' => true,
+		'can_export' => true,
+		'show_ui' => true,
+		'_builtin' => false,
+		'_edit_link' => 'post.php?post=%d', // ?
+		'capability_type' => 'post',
+		//'menu_icon' => get_bloginfo('template_url').'/images/event_16.png', // replace in 1.1
+		'hierarchical' => false,
+		'rewrite' => array( "slug" => "events" ),
+		'supports'=> array('title', 'thumbnail', 'editor') ,
+		'show_in_nav_menus' => true,
+		'taxonomies' => array( 'tf_eventcategory', 'post_tag')
+	);
+	
+	register_post_type( 'tf_events', $args);
 }
 
 // 2. Custom Taxonomy Registration (Event Types)
@@ -154,6 +152,7 @@ function tf_events_custom_columns($column) {
                 _e('None');;
                 }
             break;
+			
             case "tf_col_ev_date":
                 // - show dates -
                 $startd = $custom["tf_events_startdate"][0];
@@ -162,6 +161,7 @@ function tf_events_custom_columns($column) {
                 $enddate = date("F j, Y", $endd);
                 echo $startdate . '<br /><em>' . $enddate . '</em>';
             break;
+			
             case "tf_col_ev_times":
                 // - show times -
                 $startt = $custom["tf_events_startdate"][0];
@@ -171,6 +171,7 @@ function tf_events_custom_columns($column) {
                 $endtime = date($time_format, $endt);
                 echo $starttime . ' - ' .$endtime;
             break;
+			
             case "tf_col_ev_thumb":
                 // - show thumb -
                 $post_image_id = get_post_thumbnail_id(get_the_ID());
@@ -184,6 +185,7 @@ function tf_events_custom_columns($column) {
                     echo '&h=60&w=60&zc=1" alt="" />';
                 }
             break;
+			
             case "tf_col_ev_desc";
                 the_excerpt();
             break;
@@ -226,13 +228,12 @@ function tf_events_meta () {
     $clean_st = date($time_format, $meta_st);
     $clean_et = date($time_format, $meta_et);
 
-    // - security -
+    // - security - nonce
 
     echo '<input type="hidden" name="tf-events-nonce" id="tf-events-nonce" value="' .
     wp_create_nonce( 'tf-events-nonce' ) . '" />';
 
-    // - output -
-
+    // - output of the metabox
     ?>
     <div class="tf-meta">
         <ul>
@@ -245,7 +246,7 @@ function tf_events_meta () {
     <?php
 }
 
-// 5. Save Data
+// 5. Save Meta Box Data
 
 add_action ('save_post', 'save_tf_events');
 
@@ -253,7 +254,7 @@ function save_tf_events(){
 
     global $post;
 
-    // - still require nonce
+    // - validate require nonce
 
     if ( !wp_verify_nonce( $_POST['tf-events-nonce'], 'tf-events-nonce' )) {
         return $post->ID;
@@ -292,13 +293,11 @@ function events_updated_messages( $messages ) {
     2 => __('Custom field updated.'),
     3 => __('Custom field deleted.'),
     4 => __('Event updated.'),
-    /* translators: %s: date and time of the revision */
-    5 => isset($_GET['revision']) ? sprintf( __('Event restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+    5 => isset($_GET['revision']) ? sprintf( __('Event restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false, // translators: %s: date and time of the revision
     6 => sprintf( __('Event published. <a href="%s">View event</a>'), esc_url( get_permalink($post_ID) ) ),
     7 => __('Event saved.'),
     8 => sprintf( __('Event submitted. <a target="_blank" href="%s">Preview event</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
-    9 => sprintf( __('Event scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview event</a>'),
-      // translators: Publish box date format, see http://php.net/date
+    9 => sprintf( __('Event scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview event</a>'), // translators: Publish box date format, see http://php.net/date
       date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
     10 => sprintf( __('Event draft updated. <a target="_blank" href="%s">Preview event</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
   );
