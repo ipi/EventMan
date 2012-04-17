@@ -312,7 +312,7 @@ function events_styles() {
     global $post_type;
     if( 'tf_events' != $post_type )
         return;
-    wp_enqueue_style('ui-datepicker', plugins_url('/css/jquery-ui-1.8.9.custom.css', __FILE__) );
+    wp_enqueue_style('ui-datepicker', plugins_url('/css/jquery-ui-1.8.9.custom.css', __FILE__) ); // replaced in 1.1
 }
 
 function events_scripts() {
@@ -320,8 +320,8 @@ function events_scripts() {
     if( 'tf_events' != $post_type )
     return;
 	
-	wp_enqueue_script('jquery-ui',plugins_url('/js/jquery-ui-1.8.9.custom.min.js', __FILE__),array('jquery'), '1.8.9');
-	wp_enqueue_script('jquery-ui-datepicker',plugins_url('/js/jquery.ui.datepicker.min.js', __FILE__),array('jquery-ui'), '1.8.9');
+	wp_enqueue_script('jquery-ui',plugins_url('/js/jquery-ui-1.8.9.custom.min.js', __FILE__),array('jquery'), '1.8.9'); // replaced in 1.1
+	wp_enqueue_script('jquery-ui-datepicker',plugins_url('/js/jquery.ui.datepicker.min.js', __FILE__),array('jquery-ui'), '1.8.9'); // replaced in 1.1
 	wp_enqueue_script('pubforce-admin',plugins_url('/js/pubforce-admin.js', __FILE__),array('jquery'), '1.0');
 }
 
@@ -332,6 +332,6 @@ add_action( 'admin_print_scripts-post.php', 'events_scripts', 1000 );
 add_action( 'admin_print_scripts-post-new.php', 'events_scripts', 1000 );
 
 /* Includes */
-include('cpt-events-shortcode.php');
-//include('cpt-events-ical.php');
+include('events-shortcode.php');
+//include('events-ical.php');
 ?>
