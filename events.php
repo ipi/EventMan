@@ -72,45 +72,14 @@ function create_event_postype() {
 		'rewrite' => array( "slug" => "events" ),
 		'supports'=> array('title', 'thumbnail', 'editor') ,
 		'show_in_nav_menus' => true,
-		'taxonomies' => array( 'tf_eventcategory', 'post_tag')
+		// changed to use post taxonomy
+		'taxonomies' => array( 'category', 'post_tag')
 	);
 	
 	register_post_type( 'tf_events', $args);
 }
 
-// 2. Custom Taxonomy Registration (Event Types)
-
-function create_eventcategory_taxonomy() {
-
-    $labels = array(
-        'name' => _x( 'Categories', 'taxonomy general name' ),
-        'singular_name' => _x( 'Category', 'taxonomy singular name' ),
-        'search_items' =>  __( 'Search Categories' ),
-        'popular_items' => __( 'Popular Categories' ),
-        'all_items' => __( 'All Categories' ),
-        'parent_item' => null,
-        'parent_item_colon' => null,
-        'edit_item' => __( 'Edit Category' ),
-        'update_item' => __( 'Update Category' ),
-        'add_new_item' => __( 'Add New Category' ),
-        'new_item_name' => __( 'New Category Name' ),
-        'separate_items_with_commas' => __( 'Separate categories with commas' ),
-        'add_or_remove_items' => __( 'Add or remove categories' ),
-        'choose_from_most_used' => __( 'Choose from the most used categories' ),
-    );
-
-    register_taxonomy('tf_eventcategory','tf_events', array(
-        'label' => __('Event Category'),
-        'labels' => $labels,
-        'hierarchical' => true,
-        'show_ui' => true,
-        'query_var' => true,
-        'rewrite' => array( 'slug' => 'event-category' ),
-    ));
-
-}
-
-add_action( 'init', 'create_eventcategory_taxonomy', 0 );
+// 2. Removed initializing the event-category -ipi
 
 // 3. Show Columns
 
